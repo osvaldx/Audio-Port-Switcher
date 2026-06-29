@@ -34,7 +34,7 @@ Para que el widget funcione correctamente, tu sistema debe contar con:
 
 ### Cómo instalarlo
 1. Copiá la carpeta `audioPortSwitcher` en `~/.config/DankMaterialShell/plugins/`.
-2. Sumá `"audioPortSwitcher"` a la lista de `leftWidgets`, `centerWidgets` o `rightWidgets` en tu archivo `settings.json`.
+2. Agrega `"audioPortSwitcher"` a la lista de `leftWidgets`, `centerWidgets` o `rightWidgets` en tu archivo `settings.json`.
 
 ---
 
