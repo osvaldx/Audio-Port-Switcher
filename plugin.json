@@ -9,6 +9,8 @@
     "type": "widget",
     "distro": ["any"],
     "capabilities": ["dankbar-widget"],
+    "dependencies": [],
+    "compositors": ["hyprland", "niri"],
     "component": "./AudioPortSwitcherWidget.qml",
     "settings": "./AudioPortSwitcherSettings.qml",
     "permissions": [
