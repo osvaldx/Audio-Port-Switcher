@@ -12,6 +12,7 @@
     "screenshot": "https://raw.githubusercontent.com/osvaldx/Audio-Port-Switcher/refs/heads/main/previews/settings.png",
     "version": "1.0.0",
     "type": "widget",
+    "icon": "headset_mic",
     "component": "./AudioPortSwitcherWidget.qml",
     "settings": "./AudioPortSwitcherSettings.qml",
     "permissions": [
