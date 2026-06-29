@@ -8,8 +8,10 @@ A simple widget for Dank Material Shell (DMS) to switch the microphone input bet
 * **Instant updates:** If you plug or unplug your headset, the bar icon updates right away.
 * **Native DMS look:** Hover effects, rounded corners, and click actions work natively with the rest of your bar widgets.
 
-### Dependencies
-You need to have `pipewire` and `pulseaudio-utils` (for the `pactl` command) installed on your system.
+## System Requirements
+For the widget to work correctly, your system must have:
+* **PipeWire** (with active `pipewire-pulse`)
+* **libpulse** (which provides the `pactl` command)
 
 ### How to install
 1. Copy the `audioPortSwitcher` folder to `~/.config/DankMaterialShell/plugins/`.
@@ -25,8 +27,10 @@ Un widget simple para Dank Material Shell (DMS) que te permite cambiar la entrad
 * **Actualización al instante:** Si conectás o desconectás el auricular, el icono de la barra cambia en el acto.
 * **Diseño nativo de DMS:** El efecto hover, los bordes redondeados y el clic se integran de forma nativa con los otros widgets de la barra.
 
-### Dependencias
-Necesitás tener instalado `pipewire` y `pulseaudio-utils` (para usar el comando `pactl`).
+## Requisitos del sistema
+Para que el widget funcione correctamente, tu sistema debe contar con:
+* **PipeWire** (con `pipewire-pulse` activo)
+* **libpulse** (que provee el comando `pactl`)
 
 ### Cómo instalarlo
 1. Copiá la carpeta `audioPortSwitcher` en `~/.config/DankMaterialShell/plugins/`.
