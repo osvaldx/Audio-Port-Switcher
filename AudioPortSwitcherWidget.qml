@@ -20,6 +20,7 @@ PluginComponent {
     property string internalMicLabel: "Laptop Mic"
     property string headsetMicLabel: "Headset Mic"
     property bool showNotifications: true
+    property bool noLabel: false
     property int barIconSize: 14
 
 
@@ -52,6 +53,7 @@ PluginComponent {
         internalMicLabel = pluginService.loadPluginData("audioPortSwitcher", "internalMicLabel", "Laptop Mic");
         headsetMicLabel = pluginService.loadPluginData("audioPortSwitcher", "headsetMicLabel", "Headset Mic");
         showNotifications = pluginService.loadPluginData("audioPortSwitcher", "showNotifications", true);
+        noLabel = pluginService.loadPluginData("audioPortSwitcher", "noLabel", false);
     }
 
     // --- Toggle Audio Port Logic ---
@@ -171,7 +173,7 @@ PluginComponent {
     horizontalBarPill: Component {
         RowLayout {
             id: horizLayout
-            spacing: Theme.spacingS ? Theme.spacingS : 6
+            spacing: (root.noLabel || !textLabel.visible) ? 0 : (Theme.spacingS ? Theme.spacingS : 6)
 
             DankIcon {
                 id: horizIcon
@@ -183,6 +185,8 @@ PluginComponent {
             }
 
             StyledText {
+                id: textLabel
+                visible: !root.noLabel
                 text: (root.activePort === "analog-input-headset-mic") ? root.headsetMicLabel : root.internalMicLabel
                 font.pixelSize: Theme.fontSizeSmall ? Theme.fontSizeSmall : 12
                 color: Theme.surfaceText

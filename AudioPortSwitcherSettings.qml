@@ -45,6 +45,21 @@ PluginSettings {
         opacity: 0.3
     }
 
+    ToggleSetting {
+        id: noLabelToggle
+        settingKey: "noLabel"
+        label: "Hide Text Label"
+        description: "Only show the icon in the bar, hiding the text label."
+        defaultValue: false
+    }
+
+    Rectangle {
+        width: parent.width
+        height: 1
+        color: Theme.outline
+        opacity: 0.3
+    }
+
     StyledText {
         width: parent.width
         text: "Icons & Labels (Material Symbols)"
