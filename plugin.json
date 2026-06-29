@@ -1,0 +1,18 @@
+{
+    "id": "audioPortSwitcher",
+    "name": "Audio Port Switcher",
+    "description": "Switch audio ports on a 3.5mm combo jack (internal mic vs headset mic) dynamically using PipeWire (pactl).",
+    "repo": "https://github.com/osvaldx/Audio-Port-Switcher",
+    "author": "osvaldx",
+    "version": "1.0.0",
+    "category": "audio",
+    "type": "widget",
+    "distro": ["any"],
+    "capabilities": ["dankbar-widget"],
+    "component": "./AudioPortSwitcherWidget.qml",
+    "settings": "./AudioPortSwitcherSettings.qml",
+    "permissions": [
+        "settings_read",
+        "settings_write"
+    ]
+}
