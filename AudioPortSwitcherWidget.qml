@@ -24,6 +24,7 @@ PluginComponent {
     property string detectedHeadsetMicPort: ""
 
     // --- Configurable Settings (with defaults) ---
+    property string language: "es"
     property string internalMicLabel: "Laptop Mic"
     property string headsetMicLabel: "Headset Mic"
     property bool showNotifications: true
@@ -61,11 +62,12 @@ PluginComponent {
     function loadSettings() {
         if (!pluginService)
             return;
+        language = pluginService.loadPluginData("audioPortSwitcher", "language", "es");
         internalMicLabel = pluginService.loadPluginData("audioPortSwitcher", "internalMicLabel", "Laptop Mic");
         headsetMicLabel = pluginService.loadPluginData("audioPortSwitcher", "headsetMicLabel", "Headset Mic");
         showNotifications = pluginService.loadPluginData("audioPortSwitcher", "showNotifications", true);
         noLabel = pluginService.loadPluginData("audioPortSwitcher", "noLabel", false);
-        console.log("AudioPortSwitcher: Loaded settings:", internalMicLabel, headsetMicLabel, showNotifications, noLabel);
+        console.log("AudioPortSwitcher: Loaded settings:", language, internalMicLabel, headsetMicLabel, showNotifications, noLabel);
     }
 
     // --- Toggle Audio Port Logic ---
@@ -253,7 +255,7 @@ PluginComponent {
 
     function sendNotification(title, message, icon) {
         if (!showNotifications) return;
-        notificationProcess.exec(["notify-send", "-i", icon, title, message]);
+        notificationProcess.exec(["notify-send", "-a", "Audio Port Switcher", "-i", icon, title, message]);
     }
 
     // --- Reactive System Notification ---
@@ -264,9 +266,12 @@ PluginComponent {
         var label = (root.activePort === root.detectedHeadsetMicPort) ? root.headsetMicLabel : root.internalMicLabel;
         var icon = (root.activePort === root.detectedHeadsetMicPort) ? "audio-headset" : "audio-input-microphone";
         
+        var title = (root.language === "es") ? "Conmutador de Audio" : "Audio Port Switcher";
+        var message = (root.language === "es") ? "Puerto de entrada activo: " : "Active input port: ";
+
         sendNotification(
-            "Conmutador de Audio", 
-            "Puerto de entrada activo: " + label, 
+            title, 
+            message + label, 
             icon
         );
     }
