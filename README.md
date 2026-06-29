@@ -43,3 +43,7 @@ Necesitás tener instalado `pipewire` y `pulseaudio-utils` (para usar el comando
 | Settings / Ajustes |
 | :---: |
 | ![Settings](previews/settings.png) |
+
+| Notification / Notificacion |
+| :---: |
+| ![Settings](previews/notification.png) |
